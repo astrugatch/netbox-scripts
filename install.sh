@@ -3,7 +3,6 @@
 VERSION=2.4.4
 URL=https://github.com/digitalocean/netbox/archive/v${VERSION}.tar.gz
 CURDIR=`pwd`
-POSTGRESPWD=N3TB0XD@T@B@S3
 PRIVATE_KEY='Yb3QMW1VI6Ln8xUWLqZc7h3G4csdouHDTq5zclbES9EtjIclyM'
 
 # Install pre-requisites
@@ -35,7 +34,7 @@ cd netbox/netbox/
 sudo cp configuration.example.py configuration.py
 sudo sed -i "s/ALLOWED_HOSTS = \[\]/ALLOWED_HOSTS = \['*'\]/" /opt/netbox/netbox/netbox/configuration.py
 sudo sed -i "s/'USER': '',/'USER': 'netbox',/" /opt/netbox/netbox/netbox/configuration.py
-sudo sed -i "s/'PASSWORD': '',           # PostgreSQL password/'PASSWORD': '{POSTGRESPWD}',/" /opt/netbox/netbox/netbox/configuration.py
+sudo sed -i "s/'PASSWORD': '',           # PostgreSQL password/'PASSWORD': 'N3TB0XD@T@B@S3',/" /opt/netbox/netbox/netbox/configuration.py
 sudo sed -i "s/SECRET_KEY = ''/SECRET_KEY = '${PRIVATE_KEY}'/" /opt/netbox/netbox/netbox/configuration.py
 
 # Run database migrations
