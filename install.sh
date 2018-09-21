@@ -23,6 +23,9 @@ wget ${URL}
 tar xzvf v${VERSION}.tar.gz -C /opt/
 sudo ln -s /opt/netbox-${VERSION} /opt/netbox
 
+#Take ownership of netbox media
+sudo chown -R netbox:netbox /opt/netbox/netbox/media/
+
 # Install app requirements
 cd /opt/netbox/
 sudo pip3 install -r requirements.txt
